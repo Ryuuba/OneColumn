@@ -1,0 +1,174 @@
+% Tells pdfTeX to set the pdf version of the output file to 1.4
+\pdfminorversion 4
+\documentclass[10pt]{article}
+\usepackage{listingsutf8} % Embebbed formatted code to the file
+\lstset{basicstyle=\footnotesize\ttfamily}
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\graphicspath{{Figures/}{Logo/}} % Directories where images are stored
+\usepackage{wrapfig} % Allows in-line images
+   \graphicspath{{Figure/}, {Logo/}} % Establishes the path of figures
+\usepackage[svgnames]{xcolor} % Allows the use of colors across the document
+   \definecolor{Azc}{RGB}{205,3,46}
+   \definecolor{Izt}{RGB}{87,165,25}
+   \definecolor{Xoc}{RGB}{0,114,206}
+   \definecolor{Cua}{RGB}{240,130,0}
+   \definecolor{Ler}{RGB}{173,37,168}
+\chapterfont{\color{Xoc}}
+\sectionfont{\color{Xoc}}
+\subsectionfont{\color{Xoc}}
+\usepackage{hyperref}
+\hypersetup{
+   colorlinks=true,
+   linkcolor=black,
+   bookmarks=true,
+   citecolor=black,
+   linkbordercolor=white,
+   urlcolor=Xoc,
+   citecolor=Xoc
+}
+\usepackage{url} % Become references in links
+
+\usepackage[spanish,mexico]{babel} % Requiered for Mexican Spanish hyphenation and table names
+\usepackage[utf8x]{inputenc} % Required for accented characters
+\usepackage{mathpazo} % Use the Palatino font
+
+\usepackage{algorithm} %required to write pseudocode
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+\usepackage[sort&compress]{natbib} %change a list of citation [1], [2], [3] to [1-3]
+
+\usepackage{siunitx} %Requiered to use SI units
+
+\usepackage{booktabs} %Fancy tables
+
+\linespread{1.05} % Changes line spacing here, Palatino benefits from a slight increase by default
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Changes the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduces the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customizes the title - do not edit title and author name here, see the TITLE block below
+\begin{flushright} % Right align
+{\LARGE\@title} % Increases the font size of the title
+
+\vspace{50pt} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+\\\@date % Date
+
+\vspace{40pt} % Some vertical space between the author block and abstract
+\end{flushright}
+}
+
+%-------------------------------------------------------------------------------
+%	TITLE
+%-------------------------------------------------------------------------------
+
+\title{
+   \textcolor{Xoc}{{\textbf Título no muy largo}}\\ % Title
+   \textcolor{gray}{\large Subtítulo opcional} % Subtitle
+}
+
+\author{Adán G. Medrano-Chávez\\ % Author
+        \\  % Affiliation
+        \href{mailto:adme@xanum.uam.mx}{adme at xanum dot uam dot mx}
+}
+\date{\today} % Date
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title section
+
+%-------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%-------------------------------------------------------------------------------
+
+\renewcommand{\abstractname}{Resumen} % Uncomment to change the name of the abstract to something else
+\renewcommand{\lstlistingname}{Código} % Listing -> Code
+
+\begin{abstract}
+Morbi tempor congue porta. Proin semper, leo vitae faucibus dictum, metus mauris lacinia lorem, ac congue leo felis eu turpis. Sed nec nunc pellentesque, gravida eros at, porttitor ipsum. Praesent consequat urna a lacus lobortis ultrices eget ac metus. In tempus hendrerit rhoncus. Mauris dignissim turpis id sollicitudin lacinia. Praesent libero tellus, fringilla nec ullamcorper at, ultrices id nulla. Phasellus placerat a tellus a malesuada.
+\end{abstract}
+
+%\hspace*{3,6mm}\textit{Palabras clave:} lorem , ipsum , dolor , sit amet , lectus % Keywords
+
+\vspace{30pt} % Some vertical space between the abstract and first section
+
+%-------------------------------------------------------------------------------
+%	BODY
+%-------------------------------------------------------------------------------
+
+\section{Introducción}
+
+This statement requires citation \cite{HeJo03,HwEn05,MuMi07}; this one does too \cite{StWi13}. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dictum lacus sem, ut varius ante dignissim ac. Sed a mi quis lectus feugiat aliquam. Nunc sed vulputate velit. Sed commodo metus vel felis semper, quis rutrum odio vulputate. Donec a elit porttitor, facilisis nisl sit amet, dignissim arcu. Vivamus accumsan pellentesque nulla at euismod. Duis porta rutrum sem, eu facilisis mi varius sed. Suspendisse potenti. Mauris rhoncus neque nisi, ut laoreet augue pretium luctus. Vestibulum sit amet luctus sem, luctus ultrices leo. Aenean vitae sem leo.
+
+Nullam semper quam at ante convallis posuere. Ut faucibus tellus ac massa luctus consectetur. Nulla pellentesque tortor et aliquam vehicula. Maecenas imperdiet euismod enim ut pharetra. Suspendisse pulvinar sapien vitae placerat pellentesque. Nulla facilisi. Aenean vitae nunc venenatis, vehicula neque in, congue ligula.
+
+Pellentesque quis neque fringilla, varius ligula quis, malesuada dolor. Aenean malesuada urna porta, condimentum nisl sed, scelerisque nisi. Suspendisse ac orci quis massa porta dignissim. Morbi sollicitudin, felis eget tristique laoreet, ante lacus pretium lacus, nec ornare sem lorem a velit. Pellentesque eu erat congue, ullamcorper ante ut, tristique turpis. Nam sodales mi sed nisl tincidunt vestibulum. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+%------------------------------------------------
+
+\section{Nombre de la sección}
+
+\begin{wrapfigure}{r}{0.3\textwidth} % Inline image example
+   \begin{center}
+      \includegraphics[width = 0.3\textwidth]{fish.png}
+   \end{center}
+   \caption{Fish.}
+   \label{fig:fish}
+\end{wrapfigure}
+
+Cras gravida, \textbf{est vel interdum euismod}, tortor mi lobortis mi, quis adipiscing elit lacus ut orci. Phasellus nec fringilla nisi, ut vestibulum neque. Aenean non risus eu nunc accumsan condimentum at sed ipsum \ref{fig:fish}.
+Aliquam fringilla non diam sed varius. Suspendisse tellus felis, hendrerit non bibendum ut, adipiscing vitae diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis purus eget nisl scelerisque, commodo rhoncus lacus porta. Vestibulum vitae turpis tincidunt, varius dolor in, dictum lectus. Aenean ac ornare augue, ac facilisis purus. Sed leo lorem, molestie sit amet fermentum id, suscipit ut sem. Vestibulum orci arcu, vehicula sed tortor id, ornare dapibus lorem $\sum_{i=1}^{N}{i^2}$. Praesent aliquet iaculis lacus nec fermentum. Morbi eleifend blandit dolor, pharetra hendrerit neque ornare vel. Nulla ornare, nisl eget imperdiet ornare, libero enim interdum mi, ut lobortis quam velit bibendum nibh.
+
+\begin{equation}
+   s^2 = \frac{1}{n-1}\sum_{i=1}{n}{(y_i-\bar{y})^2}
+   \label{eq:variance}
+\end{equation}
+
+Morbi tempor congue porta. Proin semper, leo vitae faucibus dictum, metus mauris lacinia lorem, ac congue leo felis eu turpis. Sed nec nunc pellentesque, gravida eros at, porttitor ipsum. Praesent consequat urna a lacus lobortis ultrices eget ac metus. In tempus hendrerit rhoncus. Mauris dignissim turpis id sollicitudin lacinia. Praesent libero tellus, fringilla nec ullamcorper at, ultrices id nulla. Phasellus placerat a tellus a malesuada \ref{eq:variance}.
+
+\subsection{Subsección}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc \ref{tab:example}.
+
+\begin{table}
+   \centering
+   \caption{Ejemplo de tabla.}
+   \begin{tabular}{llr}
+      \toprule
+      \multicolumn{2}{c}{Name} \\
+      \cmidrule(r){1-2} First name & Last Name & Grade \\ 
+      \midrule John & Doe & $7.5$ \\
+      Richard & Miles & $2$ \\
+      \bottomrule
+   \end{tabular}
+   \label{tab:example}
+\end{table}
+
+\section{Conclusión}
+
+Fusce in nibh augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In dictum accumsan sapien, ut hendrerit nisi. Phasellus ut nulla mauris. Phasellus sagittis nec odio sed posuere. Vestibulum porttitor dolor quis suscipit bibendum. Mauris risus lectus, cursus vitae hendrerit posuere, congue ac est. Suspendisse commodo eu eros non cursus. Mauris ultrices venenatis dolor, sed aliquet odio tempor pellentesque. Duis ultricies, mauris id lobortis vulputate, tellus turpis eleifend elit, in gravida leo tortor ultricies est. Maecenas vitae ipsum at dui sodales condimentum a quis dui. Nam mi sapien, lobortis ac blandit eget, dignissim quis nunc.
+
+\begin{enumerate}
+   \item First numbered list item
+   \item Second numbered list item
+\end{enumerate}
+
+\begin{itemize}
+   \item sfsdf
+   \item fasfasd
+\end{itemize}
+
+Donec luctus tincidunt mauris, non ultrices ligula aliquam id. Sed varius, magna a faucibus congue, arcu tellus pellentesque nisl, vel laoreet magna eros et magna. Vivamus lobortis elit eu dignissim ultrices. Fusce erat nulla, ornare at dolor quis, rhoncus venenatis velit. Donec sed elit mi. Sed semper tellus a convallis viverra. Maecenas mi lorem, placerat sit amet sem quis, adipiscing tincidunt turpis. Cras a urna et tellus dictum eleifend. Fusce dignissim lectus risus, in bibendum tortor lacinia interdum.
+
+
+%	BIBLIOGRAPHY
+\bibliographystyle{unsrt}
+\bibliography{architecture}
+
+\end{document}
