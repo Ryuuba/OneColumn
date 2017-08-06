@@ -5,6 +5,27 @@
 %-------------------------------------------------------------------------------
 \include{preamble}
 
+%-------------------------------------------------------------------------------
+
+%	TITLE
+
+%-------------------------------------------------------------------------------
+\title{
+   \blue{\textbf{Título del reporte no muy largo}}\\[-0.25cm] % Title
+   \gray{\large Nombre de la UEA}\\ % Subtitle
+}
+
+\author{Alumno 1\\ % Author
+        Alumno 2\\
+        Alumno 3\\
+        Universidad Autónoma Metropolitana -- azcapotzalco\\  % Affiliation
+        \href{mailto:alumno1@azc.uam.mx}{\{alumno1,}
+        \href{mailto:alumno2@azc.uam.mx}{alumno2,}
+        \href{mailto:alumno3@azc.uam.mx}{alumno3\}@correo.azc.uam.mx}
+}
+
+\date{\today} % Date
+
 \begin{document}
 
 \maketitle % Print the title section
@@ -14,15 +35,10 @@
 %-------------------------------------------------------------------------------
 
 \begin{abstract}
-En esta sección el alumno redacta con un máximo de 50 palabras el contenido de 
-la práctica: el problema resuelto, las restricciones que se requieren para 
-obtener los resultados y los resultados principales. La primera parte de este 
-apartado se redacta en presente y la presentación de resultados en pasado.
+\noindent En esta sección el alumno redacta con un máximo de 50 palabras el contenido de la práctica: el problema resuelto, las restricciones que se requieren para obtener los resultados y los resultados principales. La primera parte de este apartado se redacta en presente y la presentación de resultados en pasado.
 \end{abstract}
 
 \hspace*{3,6mm}\textit{Palabras clave:} reporte, formato, redacción% Keywords
-
-\vspace{30pt} % Some vertical space between the abstract and first section
 
 %-------------------------------------------------------------------------------
 %	BODY
@@ -56,10 +72,10 @@ otras cosas más. Lo importante es que quede bien claro todo lo necesario para
 entender el contenido medular del reporte.
 
 \begin{figure}[t] % Inline image example
-    \centering
-    \includegraphics[width = 0.75\textwidth]{fsm}
-    \caption{Máquina de estados finitos.}
-    \label{fig:fsm}
+  \centering
+  \includegraphics[width = 0.75\textwidth]{fsm}
+  \caption{Máquina de estados finitos.}
+  \label{fig:fsm}
 \end{figure}
 
 En la introducción y a lo largo del reporte es común el uso de elementos 
@@ -105,10 +121,10 @@ sección~\ref{sec:conclusion} se concluye este reporte.
 En este apartado se menciona el software o hardware empleado en la realización 
 de la práctica, por ejemplo:
 \begin{enumerate}
-    \item visual code
-    \item iverilog
-    \item gtkwave
-    \item tarjeta de desarrollo Altera DE2
+  \item visual code
+  \item iverilog
+  \item gtkwave
+  \item tarjeta de desarrollo Altera DE2
 \end{enumerate}
 
 Enseguida se describe el software, se menciona la versión y se menciona su 
@@ -159,21 +175,21 @@ inclusión de una código, entonces éste presentarse como se muestra en el
 código~\ref{code:factorial}.
 
 \begin{center}
-    \begin{minipage}[t]{0.5\textwidth}
-        \begin{algorithm}[H]
-            \caption{Cálculo recursivo del factorial de $x$}\label{alg:factorial}
-            \begin{algorithmic}[1]
-                \Procedure{Factorial}{$x$}\Comment{$x!$}
-                \If{$x \leq 1$}
-                    \State $n \gets x$
-                \Else
-                    \State $n \gets x \cdot $ \textsc{Factorial}$(x-1)$
-                \EndIf
-                \State \textbf{return} $n$
-                \EndProcedure
-            \end{algorithmic}
-        \end{algorithm}
-    \end{minipage}
+  \begin{minipage}[t]{0.5\textwidth}
+    \begin{algorithm}[H]
+      \caption{Cálculo recursivo del factorial de $x$}\label{alg:factorial}
+      \begin{algorithmic}[1]
+          \Procedure{Factorial}{$x$}\Comment{$x!$}
+          \If{$x \leq 1$}
+            \State $n \gets x$
+          \Else
+            \State $n \gets x \cdot $ \textsc{Factorial}$(x-1)$
+          \EndIf
+          \State \textbf{return} $n$
+          \EndProcedure
+      \end{algorithmic}
+    \end{algorithm}
+  \end{minipage}
 \end{center}
 
 \lstinputlisting[caption={Implementación del algoritmo recursivo del cálculo del factorial de $x$ en c++.}, label=code:factorial, numbers=left]{factorial.cc}
@@ -227,17 +243,17 @@ literatura contra un diseño original, entonces se tiene que explicar por qué e
 diseño original es más rápido que el que se encuentra en el literatura.
 
 \begin{table}
-   \centering
-   \caption{Ejemplo de tabla.}
-   \begin{tabular}{llr}
-      \toprule
-      \multicolumn{2}{c}{Name} \\
-      \cmidrule(r){1-2} First name & Last Name & Grade \\ 
-      \midrule John & Doe & $7.5$ \\
-      Richard & Miles & $2$ \\
-      \bottomrule
-   \end{tabular}
-   \label{tab:example}
+  \centering
+  \caption{Ejemplo de tabla.}
+  \begin{tabular}{llr}
+    \toprule
+    \multicolumn{2}{c}{Name} \\
+    \cmidrule(r){1-2} First name & Last Name & Grade \\ 
+    \midrule John & Doe & $7.5$ \\
+    Richard & Miles & $2$ \\
+    \bottomrule
+  \end{tabular}
+  \label{tab:example}
 \end{table}
 
 \section{Conclusión}\label{sec:conclusion}
