@@ -197,7 +197,7 @@ FUNCTION {bbl.editor}{ "ed." }
 FUNCTION {bbl.edition}{ "ed." }
 FUNCTION {bbl.volume}{ "vol." }
 FUNCTION {bbl.of}{ "de" }
-FUNCTION {bbl.number}{ "num." }
+FUNCTION {bbl.number}{ "núm." }
 FUNCTION {bbl.in}{ "en" }
 FUNCTION {bbl.pages}{ "pp." }
 FUNCTION {bbl.page}{ "p." }
@@ -208,7 +208,7 @@ FUNCTION {bbl.patent}{ "Patente" }
 FUNCTION {bbl.patentUS}{ "EUA" }
 FUNCTION {bbl.revision}{ "Rev." }
 FUNCTION {bbl.series}{ "ser." }
-FUNCTION {bbl.standard}{ "Std." }
+FUNCTION {bbl.standard}{ "Estándar" }
 FUNCTION {bbl.techrep}{ "Reporte Técnico." }
 FUNCTION {bbl.mthesis}{ "Tesis de maestría" }
 FUNCTION {bbl.phdthesis}{ "Tesis doctoral" }
@@ -235,18 +235,18 @@ FUNCTION {repeated.name.dashes} { "------" }
 %% PREDEFINED STRING MACROS %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-MACRO {jan} {"Ene."}
-MACRO {feb} {"Feb."}
-MACRO {mar} {"Mar."}
-MACRO {apr} {"Abr."}
-MACRO {may} {"May"}
-MACRO {jun} {"Jun."}
-MACRO {jul} {"Jul."}
-MACRO {aug} {"Ago."}
-MACRO {sep} {"Sep."}
-MACRO {oct} {"Oct."}
-MACRO {nov} {"Nov."}
-MACRO {dec} {"Dic."}
+MACRO {jan} {"ene."}
+MACRO {feb} {"feb."}
+MACRO {mar} {"mar."}
+MACRO {apr} {"abr."}
+MACRO {may} {"may"}
+MACRO {jun} {"jun."}
+MACRO {jul} {"jul."}
+MACRO {aug} {"ago."}
+MACRO {sep} {"sep."}
+MACRO {oct} {"oct."}
+MACRO {nov} {"nov."}
+MACRO {dec} {"dic."}
 
 
 
@@ -619,7 +619,7 @@ FUNCTION {output.nonnull}
      { skip$ }
    if$ 
   prev.status.quote quote.close =
-     { "''" * }
+     { ">>" * }
      { skip$ }
    if$
   prev.status.space space.normal =
@@ -1426,7 +1426,7 @@ FUNCTION {format.article.title}
         { punct.no 'this.status.punct := }
       if$
       select.language
-      "``" swap$ *
+      "<<" swap$ *
       cap.status.std
     }
   if$
